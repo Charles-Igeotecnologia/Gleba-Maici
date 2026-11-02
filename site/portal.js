@@ -90,7 +90,7 @@
   });
   const modal=$('modal');
   const names={a:'Anexo A — Pontos GNSS',b:'Anexo B — Cena 226/123',c:'Anexo C — Cena 226/124'};
-  document.querySelectorAll('[data-anexo]').forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.anexo;$('modal-titulo').textContent=names[id];$('modal-imagem').src='assets/anexo-'+id+'.webp';$('modal-imagem').alt=names[id];modal.showModal();}));
+  document.querySelectorAll('[data-anexo]').forEach(button=>button.addEventListener('click',()=>{const id=button.dataset.anexo;$('modal-titulo').textContent=names[id];$('modal-imagem').src='assets/anexo-'+id+'.webp?v='+{"a": "05e07d88bafa", "b": "40bb621a78cb", "c": "6dc4b7b8ffad"}[id];$('modal-imagem').alt=names[id];modal.showModal();}));
   $('fechar').addEventListener('click',()=>modal.close());
   modal.addEventListener('click',event=>{if(event.target===modal){const box=modal.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)modal.close();}});
   $('compartilhar').addEventListener('click',async()=>{

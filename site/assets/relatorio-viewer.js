@@ -77,7 +77,7 @@ window.addEventListener('resize', () => {
 
 try {
   documentPdf = await pdfjs.getDocument({
-    url: new URL('./documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici.pdf', import.meta.url).href,
+    url: new URL('./documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici.pdf?v=40246c98854b', import.meta.url).href,
     cMapUrl: new URL('./vendor/pdfjs/cmaps/', import.meta.url).href,
     cMapPacked: true,
     standardFontDataUrl: new URL('./vendor/pdfjs/standard_fonts/', import.meta.url).href,
