@@ -1,0 +1,40 @@
+name: Publicar biblioteca no GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Obter código
+        uses: actions/checkout@v6
+      - name: Verificar arquivos e catálogo
+        run: python3 scripts/validate_site.py
+      - name: Verificar JavaScript
+        run: |
+          node --check site/portal.js
+          node --input-type=module --check < site/assets/relatorio-viewer.js
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: Preparar publicação
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+      - name: Publicar
+        id: deployment
+        uses: actions/deploy-pages@v4

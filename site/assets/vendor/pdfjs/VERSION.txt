@@ -1,0 +1,3 @@
+pdfjs-dist 6.5.438
+Source: https://registry.npmjs.org/pdfjs-dist
+Tarball integrity: sha512-vg8Pw1x+AFKy4AMDvhuWl5cOYV8d698UoEANoFFhc79hqXDnZQqnOXoxw3HG907WHOg1JYOvLhP756boddFxpA==
