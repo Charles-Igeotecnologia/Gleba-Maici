@@ -44,11 +44,14 @@ for html in site.rglob("*.html"):
     AssetReferences(html).feed(html.read_text(encoding="utf-8"))
 catalog = json.loads((site / "catalogo.json").read_text(encoding="utf-8"))
 files = [file for group in catalog for file in group["files"]]
-assert len(catalog) == 6 and len(files) == 56
-assert len({file["id"] for file in files}) == 56
-assert sum(int(file["size"]) for file in files) == 30130535347
-pdf = site / "assets/documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici.pdf"
-assert hashlib.sha256(pdf.read_bytes()).hexdigest() == "40246c98854b61a4a898b3c398950534ce010650baa6202a27e088860b1fe876"
+assert len(catalog) == 5 and len(files) == 553
+assert len({file["id"] for file in files}) == 553
+assert sum(int(file["size"]) for file in files) == 66611739362
+pdf = site / "assets/documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici_R03_Agosto2026.pdf"
+assert hashlib.sha256(pdf.read_bytes()).hexdigest() == "5d23c48dd05a71a2cef641350a51762a7c5b84b954bb9db470b03fc4a961217f"
+assert len({(g["id"], f["path"]) for g in catalog for f in g["files"]}) == len(files)
+embedded = (site / "dados.js").read_text(encoding="utf-8").split("=", 1)[1].strip().removesuffix(";")
+assert json.loads(embedded) == catalog, "Catálogo JSON e dados.js divergentes."
 assert not list(site.rglob(".env"))
 assert not (site / ".openai").exists()
-print(f"Publicação validada: {len(actual)} arquivos e 56 registros no catálogo.")
+print(f"Publicação validada: {len(actual)} arquivos e {len(files)} registros no catálogo.")

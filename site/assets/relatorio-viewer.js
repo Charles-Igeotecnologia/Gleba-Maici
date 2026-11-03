@@ -3,7 +3,7 @@ import * as pdfjs from './vendor/pdfjs/pdf.mjs';
 pdfjs.GlobalWorkerOptions.workerSrc = new URL('./vendor/pdfjs/pdf.worker.mjs', import.meta.url).href;
 const $ = id => document.getElementById(id);
 let documentPdf;
-let pageNumber = 1;
+let pageNumber = Number(new URLSearchParams(location.search).get('pagina')) || 1;
 let latestRequest = 0;
 let renderQueue = Promise.resolve();
 let resizeTimer;
@@ -77,13 +77,14 @@ window.addEventListener('resize', () => {
 
 try {
   documentPdf = await pdfjs.getDocument({
-    url: new URL('./documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici.pdf?v=40246c98854b', import.meta.url).href,
+    url: new URL('./documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici_R03_Agosto2026.pdf?v=5d23c48dd05a', import.meta.url).href,
     cMapUrl: new URL('./vendor/pdfjs/cmaps/', import.meta.url).href,
     cMapPacked: true,
     standardFontDataUrl: new URL('./vendor/pdfjs/standard_fonts/', import.meta.url).href,
     wasmUrl: new URL('./vendor/pdfjs/wasm/', import.meta.url).href,
     isEvalSupported: false
   }).promise;
+  pageNumber = Math.max(1, Math.min(documentPdf.numPages, Math.floor(pageNumber)));
   $('total').textContent = '/ ' + documentPdf.numPages;
   $('pagina').max = documentPdf.numPages;
   $('pagina').disabled = false;

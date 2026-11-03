@@ -9,9 +9,9 @@ Biblioteca técnica de dados do pós-processamento das imagens orbitais CBERS-4A
 
 ## Recursos
 
-Busca e filtros para 56 arquivos em seis grupos; ordenação; exportação CSV; links de acesso e download no Google Drive; cartas-imagem sob demanda; relatório técnico com leitor integrado, navegação pelas 23 páginas, zoom e download.
+Busca e filtros para 553 arquivos em cinco grupos; ordenação; exportação CSV; links de acesso e download no Google Drive; quatro cartas-imagem sob demanda; relatório técnico com leitor integrado, navegação pelas 23 páginas, zoom e download.
 
-O catálogo foi consultado em 01/11/2026. O relatório técnico, as prévias dos três anexos e os metadados da pasta 06 foram atualizados em 02/11/2026, com conferência do SHA256SUMS de origem. Não há sincronização automática. Os produtos pesados permanecem no Google Drive. A cópia do relatório PDF está incluída no portal e deve ser atualizada explicitamente quando houver nova revisão.
+O catálogo foi reconstruído recursivamente em 03/11/2026 a partir da pasta V2: https://drive.google.com/drive/folders/1XAG91VTpnTGsMcuvn-Jdmmr6xz7lCd4E. São 553 arquivos (66.611.739.362 bytes), com caminhos relativos para distinguir históricos, referências e produtos finais. O relatório R03 e as quatro prévias de seus anexos estão incluídos no portal. Os arquivos pesados permanecem no Drive; não há sincronização automática.
 
 ## Publicação e manutenção
 
@@ -41,9 +41,11 @@ Para reverter uma publicação, reverta o commit correspondente em `main`; o wor
 
 ## Referência técnica
 
-Cenas 226/123 e 226/124, adquiridas em 18/10/2026. Produtos em SIRGAS 2000 / UTM 20S (EPSG:31980), pixel de saída de 2 m. Entradas WGS 84 / UTM 20S (EPSG:32720), segundo documentação. Produto mestre com quatro bandas para cálculos; composições RGB destinadas à visualização.
+Cinco cenas CBERS-4A/WPM L4 de 12 e 17/08/2026: 227/122, 227/123, 226/122, 226/123 e 226/124. Produtos R02 em SIRGAS 2000 / UTM 20S (EPSG:31980), pixel de 2 m, mestres UInt16 de quatro bandas. VRTs dependem da estrutura de GeoTIFFs. A imagem de trabalho cobre a gleba com margem de 1 km; prefira o pacote ZIP com ECW e auxiliares.
 
-O RMSE de 2,15 m em 12 pontos GNSS e as classes cartográficas são resultados declarados no relatório técnico. O portal não realiza nova validação posicional. O controle concentra-se nos núcleos Sul e Leste; fora desses núcleos, observe a ressalva técnica revisada na seção 8 do relatório.
+O RMSE de 1,95 m em sete checagens, máximo de 2,87 m e as classes cartográficas são resultados declarados no R03, não recalculados pelo portal. A leitura de referência tem conhecimento prévio dos alvos e não equivale a sete novas leituras cegas. Os pontos concentram-se nos núcleos Sul, Leste e Noroeste, com apenas um CHK no interior. A exatidão absoluta uniforme de toda a gleba não foi demonstrada. Consulte as seções 6.4, 6.8 e 8 do R03.
+
+A atualização substitui os links, o relatório e os indicadores da entrega de outubro pela entrega V2 de agosto. O histórico anterior permanece no Git, sem misturar seus arquivos ao catálogo atual.
 
 ## Fontes e licenças
 
