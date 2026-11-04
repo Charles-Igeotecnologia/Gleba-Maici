@@ -50,6 +50,17 @@ assert sum(int(file["size"]) for file in files) == 66611739362
 pdf = site / "assets/documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici_R03_Agosto2026.pdf"
 assert hashlib.sha256(pdf.read_bytes()).hexdigest() == "5d23c48dd05a71a2cef641350a51762a7c5b84b954bb9db470b03fc4a961217f"
 assert len({(g["id"], f["path"]) for g in catalog for f in g["files"]}) == len(files)
+# O acervo ativo contém somente cenas de agosto. A documentação do
+# processamento pode mencionar referências auxiliares históricas.
+import re
+for group in catalog:
+    for file in group["files"]:
+        dates = re.findall(r"CBERS(?:_4A|4A)[^/]*?_(2026\d{4})", file["title"], re.I)
+        assert all(date in {"20260812", "20260817"} for date in dates), (
+            f"Cena fora do acervo vigente de agosto: {file['path']}"
+        )
+assert not list((site / "assets/documentos").glob("*202610*"))
+assert not (site / "assets/documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici.pdf").exists()
 embedded = (site / "dados.js").read_text(encoding="utf-8").split("=", 1)[1].strip().removesuffix(";")
 assert json.loads(embedded) == catalog, "Catálogo JSON e dados.js divergentes."
 assert not list(site.rglob(".env"))

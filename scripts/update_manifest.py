@@ -12,6 +12,6 @@ manifest["files"] = {
     if path.is_file() and path != manifest_path and path.name != "desktop.ini"
 }
 manifest_path.write_text(
-    json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n"
 )
 print(f"Manifesto atualizado: {len(manifest['files'])} arquivos.")

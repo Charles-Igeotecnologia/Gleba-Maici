@@ -5,7 +5,7 @@ Biblioteca técnica de dados do pós-processamento das imagens orbitais CBERS-4A
 ## Acesso
 
 - Portal: https://charles-igeotecnologia.github.io/Gleba-Maici/
-- Dados de origem: https://drive.google.com/drive/folders/1izpRkgm5dS0cvKGG8I72rmT8WLUhwvlR
+- Dados de origem: https://drive.google.com/drive/folders/1XAG91VTpnTGsMcuvn-Jdmmr6xz7lCd4E
 
 ## Recursos
 
@@ -52,3 +52,7 @@ A atualização substitui os links, o relatório e os indicadores da entrega de 
 Imagens CBERS-4A/WPM: INPE, licença CC BY 4.0 conforme documentação de origem. PDF.js 6.5.438: licença Apache-2.0, incluída em `site/assets/vendor/pdfjs/LICENSE`. Fontes Inter: licenças OFL incluídas em `site/assets/`. Logo Igeotecnologia fornecida pelo responsável pelo projeto.
 
 Os termos dessas fontes não atribuem automaticamente licença aos demais documentos do projeto.
+
+## Referência vigente e conferência de 04/11/2026
+
+A versão de outubro foi retirada do projeto ativo por determinação do responsável. A referência vigente é o acervo V2 de agosto, com rasters R02 e relatório R03. Os 553 registros do catálogo foram comparados aos caminhos e tamanhos locais da pasta V2, sem ausências, divergências ou arquivos adicionais nos cinco grupos. O SHA-256 do PDF R03 também foi conferido. Essa verificação local não representa um novo ensaio de precisão nem nova leitura integral dos rasters.
