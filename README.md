@@ -9,9 +9,9 @@ Biblioteca técnica de dados do pós-processamento das imagens orbitais CBERS-4A
 
 ## Recursos
 
-Busca e filtros para 553 arquivos em cinco grupos; ordenação; exportação CSV; links de acesso e download no Google Drive; quatro cartas-imagem sob demanda; relatório técnico com leitor integrado, navegação pelas 23 páginas, zoom e download.
+Busca e filtros para 464 arquivos em cinco grupos; ordenação; exportação CSV; links de acesso e download no Google Drive; quatro cartas-imagem sob demanda; relatório técnico com leitor integrado, navegação pelas 23 páginas, zoom e download.
 
-O catálogo foi reconstruído recursivamente em 03/11/2026 a partir da pasta V2: https://drive.google.com/drive/folders/1XAG91VTpnTGsMcuvn-Jdmmr6xz7lCd4E. São 553 arquivos (66.611.739.362 bytes), com caminhos relativos para distinguir históricos, referências e produtos finais. O relatório R03 e as quatro prévias de seus anexos estão incluídos no portal. Os arquivos pesados permanecem no Drive; não há sincronização automática.
+O catálogo foi reconstruído recursivamente em 03/11/2026 a partir da pasta V2: https://drive.google.com/drive/folders/1XAG91VTpnTGsMcuvn-Jdmmr6xz7lCd4E. São 464 arquivos (66.578.833.231 bytes), com caminhos relativos para distinguir históricos, referências e produtos finais. O relatório R03 e as quatro prévias de seus anexos estão incluídos no portal. Os arquivos pesados permanecem no Drive; não há sincronização automática.
 
 ## Publicação e manutenção
 
@@ -55,4 +55,8 @@ Os termos dessas fontes não atribuem automaticamente licença aos demais docume
 
 ## Referência vigente e conferência de 04/11/2026
 
-A versão de outubro foi retirada do projeto ativo por determinação do responsável. A referência vigente é o acervo V2 de agosto, com rasters R02 e relatório R03. Os 553 registros do catálogo foram comparados aos caminhos e tamanhos locais da pasta V2, sem ausências, divergências ou arquivos adicionais nos cinco grupos. O SHA-256 do PDF R03 também foi conferido. Essa verificação local não representa um novo ensaio de precisão nem nova leitura integral dos rasters.
+A versão de outubro foi retirada do projeto ativo por determinação do responsável. A referência vigente é o acervo V2 de agosto, com rasters R02 e relatório R03. Os 464 registros do catálogo foram comparados aos caminhos e tamanhos locais da pasta V2, sem ausências, divergências ou arquivos adicionais nos cinco grupos. O SHA-256 do PDF R03 também foi conferido. Essa verificação local não representa um novo ensaio de precisão nem nova leitura integral dos rasters.
+
+## Auditoria integral de links em 04/11/2026
+
+A enumeração remota recursiva detectou estudos preparatórios que ainda continham texto e páginas do relatório de outubro. A pasta ANALISE_EXATIDAO_CARTOGRAFICA (89 arquivos, 32.906.131 bytes) foi movida para o arquivo histórico externo à V2 e retirada do catálogo. O acervo ativo contém 464 arquivos. A retirada inclui o conjunto comparativo completo para preservar sua coerência fora da entrega vigente.

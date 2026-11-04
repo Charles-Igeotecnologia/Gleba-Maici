@@ -44,9 +44,9 @@ for html in site.rglob("*.html"):
     AssetReferences(html).feed(html.read_text(encoding="utf-8"))
 catalog = json.loads((site / "catalogo.json").read_text(encoding="utf-8"))
 files = [file for group in catalog for file in group["files"]]
-assert len(catalog) == 5 and len(files) == 553
-assert len({file["id"] for file in files}) == 553
-assert sum(int(file["size"]) for file in files) == 66611739362
+assert len(catalog) == 5 and len(files) == 464
+assert len({file["id"] for file in files}) == 464
+assert sum(int(file["size"]) for file in files) == 66578833231
 pdf = site / "assets/documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici_R03_Agosto2026.pdf"
 assert hashlib.sha256(pdf.read_bytes()).hexdigest() == "5d23c48dd05a71a2cef641350a51762a7c5b84b954bb9db470b03fc4a961217f"
 assert len({(g["id"], f["path"]) for g in catalog for f in g["files"]}) == len(files)
@@ -55,6 +55,8 @@ assert len({(g["id"], f["path"]) for g in catalog for f in g["files"]}) == len(f
 import re
 for group in catalog:
     for file in group["files"]:
+        assert not file["path"].startswith("ANALISE_EXATIDAO_CARTOGRAFICA/"), "Estudo comparativo histórico fora do acervo ativo"
+        assert "relatorio_anterior" not in file["title"].lower()
         dates = re.findall(r"CBERS(?:_4A|4A)[^/]*?_(2026\d{4})", file["title"], re.I)
         assert all(date in {"20260812", "20260817"} for date in dates), (
             f"Cena fora do acervo vigente de agosto: {file['path']}"
