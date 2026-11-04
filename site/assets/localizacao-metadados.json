@@ -1,0 +1,32 @@
+{
+  "source_file": "GLEBA_MAICI_R02_2M_1KM_COR_NATURAL.tif",
+  "source_crs": "EPSG:31980",
+  "preview_crs": "EPSG:3857",
+  "source_pixel_m": 2,
+  "preview_pixel_m": [
+    122.12495084616393,
+    122.4810145681462
+  ],
+  "size": [
+    550,
+    1220
+  ],
+  "bounds_latlon": [
+    [
+      -8.818588711323994,
+      -62.403644205419816
+    ],
+    [
+      -7.489866674716009,
+      -61.80025730087382
+    ]
+  ],
+  "source_imagery": "12 e 17/08/2026",
+  "geometric_revision": "R02",
+  "purpose": "apenas apresentação; sem nova avaliação posicional",
+  "resampling": "bilinear",
+  "transparent_pixels": 331679,
+  "vector_source": "LIMITE_E_FAIXA_1KM.gpkg",
+  "vector_sha256": "c192156969094b6fcc6ab26fafe260c69c89230d20e0f734730b1543cff353ea",
+  "originals_modified": false
+}

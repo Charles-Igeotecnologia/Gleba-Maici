@@ -65,6 +65,14 @@ assert not list((site / "assets/documentos").glob("*202610*"))
 assert not (site / "assets/documentos/Relatorio_Tecnico_CBERS4A_Gleba_Maici.pdf").exists()
 embedded = (site / "dados.js").read_text(encoding="utf-8").split("=", 1)[1].strip().removesuffix(";")
 assert json.loads(embedded) == catalog, "Catálogo JSON e dados.js divergentes."
+location = json.loads((site / "assets/localizacao-metadados.json").read_text(encoding="utf-8"))
+assert location["source_crs"] == "EPSG:31980" and location["preview_crs"] == "EPSG:3857"
+(south, west), (north, east) = location["bounds_latlon"]
+assert -10 < south < north < -7 and -63 < west < east < -61, "Confira os eixos da sobreposição."
+geometry = json.loads((site / "assets/localizacao-gleba.geojson").read_text(encoding="utf-8"))
+assert len(geometry["features"]) == 2
+assert {feature["properties"]["papel"] for feature in geometry["features"]} == {"gleba", "recorte"}
+assert "location.replace" not in (site / "apresentacao.js").read_text(encoding="utf-8"), "A apresentação deve abrir primeiro."
 assert not list(site.rglob(".env"))
 assert not (site / ".openai").exists()
 print(f"Publicação validada: {len(actual)} arquivos e {len(files)} registros no catálogo.")

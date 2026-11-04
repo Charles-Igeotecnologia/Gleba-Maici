@@ -6,8 +6,10 @@
 <meta name="description" content="Conheça a biblioteca da Gleba Maici: imagens CBERS-4A de agosto de 2026, produtos R02, controle de qualidade e relatório técnico R03. Saiba quais arquivos consultar e baixar.">
 <meta name="theme-color" content="#faf8f5">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="apresentacao.css?v=20261104">
-<script src="apresentacao.js?v=20261104" defer></script>
+<link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css"><link rel="stylesheet" href="apresentacao.css?v=localizacao-20261104">
+<script src="apresentacao.js?v=localizacao-20261104" defer></script>
+<script src="assets/vendor/leaflet/leaflet.js" defer></script>
+<script src="localizacao.js?v=20261104" defer></script>
 </head>
 <body>
 <a class="skip" href="#conteudo">Ir para o conteúdo</a>
@@ -18,13 +20,14 @@
 <main id="conteudo">
 <div class="container">
 <section class="hero" aria-labelledby="titulo">
-<div><p class="eyebrow">AMAZON TOPOGRAFIA · PORTAL DE DADOS</p><h1 id="titulo">Conheça os dados da Gleba Maici.</h1>
+<div><p class="eyebrow">AMAZON TOPOGRAFIA · PORTAL DE DADOS</p><h1 id="titulo">Acesso aos dados da Gleba Maici</h1>
 <p class="hero-intro">Um ponto de acesso às imagens orbitais, aos produtos processados e à documentação técnica do projeto. Aqui você entende o que foi produzido, consulta os registros de qualidade e encontra os arquivos para seu trabalho.</p>
 <div class="hero-actions"><a class="button" href="biblioteca.html">Explorar a biblioteca <span aria-hidden="true">→</span></a><a class="button secondary" href="#escolher">Qual arquivo devo usar?</a></div>
 <p class="hero-note">Imagens de agosto de 2026 · Produtos R02 · Relatório R03</p></div>
-<figure class="hero-figure"><div class="figure-top"><span>GLEBA MAICI</span><span>CBERS-4A / WPM</span></div>
-<img src="assets/previa-agosto-r02.png" width="600" height="1331" alt="Prévia em cor natural do mosaico de agosto, recortado pelo entorno da Gleba Maici, com fundo preto fora do recorte" fetchpriority="high">
-<figcaption>Imagem de trabalho R02 · Cor natural · Gleba + 1 km<br>Prévia reduzida para apresentação. Imagens: INPE, CC BY 4.0.</figcaption></figure>
+<figure class="hero-figure"><div class="figure-top"><span>LOCALIZAÇÃO DA GLEBA</span><span>VISÃO DE CONTEXTO</span></div>
+<div class="hero-map"><div id="localizacao-mapa" class="localization-map" role="region" aria-label="Mapa de satélite com o limite da Gleba Maici e seu entorno" hidden></div><img id="localizacao-previa" class="preview-fallback" src="assets/previa-agosto-r02.png" width="600" height="1331" alt="Prévia em cor natural do produto R02 de agosto, usada quando a base de contexto não está disponível" fetchpriority="high"></div>
+<div id="localizacao-controles" class="map-toolbar" hidden><div><button type="button" id="ver-entorno" aria-pressed="true">Ver entorno</button><button type="button" id="ver-gleba" aria-pressed="false">Ver gleba</button></div><label><input id="mostrar-produto" type="checkbox" checked> Imagem de agosto</label></div>
+<figcaption><span class="boundary-key" aria-hidden="true"></span> Limite de referência da Gleba Maici · tracejado: margem de 1 km.<br>Sobreposição: produto R02 de agosto/2026, INPE, CC BY 4.0. Base de contexto: Esri World Imagery, multitemporal; não integra a entrega de agosto.<span id="localizacao-status" class="map-status" role="status">Prévia do produto R02. Carregando a localização no território.</span></figcaption></figure>
 </section>
 <div class="metrics" aria-label="Síntese do acervo"><div><strong>464</strong><span>arquivos disponíveis</span></div><div><strong>5 cenas</strong><span>de 12 e 17 de agosto de 2026</span></div><div><strong>2 m</strong><span>espaçamento dos pixels de saída</span></div><div><strong>5 grupos</strong><span>da imagem original ao relatório</span></div></div>
 <section class="section" aria-labelledby="fluxo-titulo">

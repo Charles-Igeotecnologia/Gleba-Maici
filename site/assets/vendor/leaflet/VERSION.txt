@@ -1,0 +1,3 @@
+Leaflet 1.9.4
+Source: official npm registry
+SHA-1 archive: 23fae724e282fa25745aff82ca4d394748db7d8d

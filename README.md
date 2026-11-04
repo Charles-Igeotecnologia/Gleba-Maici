@@ -65,4 +65,12 @@ A enumeração remota recursiva detectou estudos preparatórios que ainda contin
 
 A entrada `site/index.html` apresenta a finalidade, as cinco etapas do acervo e um seletor didático de arquivos por objetivo. A interface segue as cores Parchment, Ink e Deep Teal e as fontes locais da biblioteca. A prévia exibida é o PNG real do recorte R02 de agosto, copiado sem alteração da pasta V2; a figura não representa nova análise espacial.
 
-A busca e os downloads permanecem em `site/biblioteca.html`. Links antigos da raiz com filtros (`q`, `grupo`, `formato`, `ordem`) ou âncoras operacionais são encaminhados à biblioteca com seus parâmetros preservados. A biblioteca oferece retorno à apresentação. Sem JavaScript, os links da apresentação e as três orientações continuam disponíveis.
+A busca e os downloads permanecem em `site/biblioteca.html`. A raiz sempre abre primeiro a apresentação, inclusive com filtros ou âncoras antigos. Os botões principais de acesso à biblioteca preservam os parâmetros recebidos, mas a navegação ocorre apenas após o clique. A biblioteca oferece retorno à apresentação. Sem JavaScript, os links da apresentação e as três orientações continuam disponíveis.
+
+## Localização espacial na apresentação
+
+O mapa Leaflet 1.9.4 usa o limite fornecido e sua margem de 1 km, lidos de `LIMITE_E_FAIXA_1KM.gpkg` em EPSG:31980 e convertidos para GeoJSON geográfico (EPSG:4326). As duas geometrias estavam válidas e foram mantidas sem simplificação ou reparo. A prévia do GeoTIFF em cor natural R02 foi reamostrada para uma grade de apresentação EPSG:3857, com transparência no fundo NoData, e sobreposta com seus limites geográficos calculados. Os mestres e o polígono original não são alterados. `scripts/preparar_localizacao.py` registra a preparação, e `assets/localizacao-metadados.json` identifica o derivado. Essa prévia não substitui o raster de resolução plena.
+
+A base Esri World Imagery e os nomes de lugares são carregados ao vivo pelos serviços ArcGIS e têm suas atribuições no mapa. São contexto multitemporal externo, sem atribuição da data de agosto e sem inclusão no catálogo da entrega. Botões permitem ver a gleba ou seu entorno; o controle da imagem de agosto alterna a sobreposição. Sem serviço de contexto, permanece a prévia local de agosto. Leaflet é distribuído localmente com licença BSD-2-Clause.
+
+Referências de implementação: https://leafletjs.com/reference e https://support.esri.com/en-us/knowledge-base/what-is-the-correct-way-to-cite-an-arcgis-online-basema-000012040. Metadados das bases: https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer?f=json e https://services.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer?f=json.
