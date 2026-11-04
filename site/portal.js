@@ -96,7 +96,7 @@
   $('fechar').addEventListener('click',()=>modal.close());
   modal.addEventListener('click',event=>{if(event.target===modal){const box=modal.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)modal.close();}});
   $('compartilhar').addEventListener('click',async()=>{
-    const link = location.protocol==='file:'?'https://charles-igeotecnologia.github.io/Gleba-Maici/':location.href;
+    const link = location.protocol==='file:'?'https://charles-igeotecnologia.github.io/Gleba-Maici/biblioteca.html':location.href;
     try {await navigator.clipboard.writeText(link);notify('Link do portal copiado.');}
     catch {let input=document.querySelector('.share-fallback');if(!input){input=document.createElement('input');input.className='share-fallback';input.readOnly=true;input.setAttribute('aria-label','Link do portal para copiar');$('compartilhar').parentElement.append(input);}input.value=link;input.focus();input.select();notify('Selecione e copie o link exibido no rodapé.');}
   });

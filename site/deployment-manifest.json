@@ -4,6 +4,8 @@
   "catalog_date": "2026-11-03",
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "apresentacao.css": "28d582358302fdd07115e5548c86050d8531fe199ea89309b3018ace62836f88",
+    "apresentacao.js": "152ebbf8803f07eca29962324dc063e41758a6e4cfa518991893eb4e7840527c",
     "assets/anexo-a.webp": "db1691300588b32b80a0a633567d3c16ba02124ce40cc4f537769242ceb6fa55",
     "assets/anexo-b.webp": "e81a457dfcf0b2a7927c36d47953f83877bf03ce39cf815ec43d716dbfe26154",
     "assets/anexo-c.webp": "ec04149f3623fa3faf1cf4abfb6fb531f6c326226a2d61dbb4285cf0908d50c2",
@@ -18,6 +20,7 @@
     "assets/inter-OFL.txt": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
     "assets/inter-tight-0.ttf": "27350bc95b961b9b4e1a80d872f49e903fe727f290f6b2a079e67ceb1685fb1f",
     "assets/intertight-OFL.txt": "50240ab035cf1b6b3307940235481d515c4b6de3ab1fa843dbe59e7892cb9d58",
+    "assets/previa-agosto-r02.png": "d231097e01a955e949e115dc19f923a4e7785144fe327354dadabfd66f73390b",
     "assets/relatorio-viewer.css": "7073c9ad4651c5bc33328225c082659ba3fcb26c26302f7620ccecfb51be04f7",
     "assets/relatorio-viewer.html": "7e5ebe27238eb772f507012b646ae6130b49d23579fb164992f2c3870ca3bf7d",
     "assets/relatorio-viewer.js": "d0b42d0575a990bb8c3246921e0f612a101c897f7796feb1f68a121aa9cc9a78",
@@ -226,12 +229,13 @@
     "assets/vendor/pdfjs/wasm/qcms_bg.wasm": "663d86126d5f5fcb1c61490f94353e2a8375660b8c5498ab3ebab5a34b08800e",
     "assets/vendor/pdfjs/wasm/quickjs-eval.js": "fe7930418e869791ce892567dbd0bc4698152b7e550b5cefa553992c56ddc325",
     "assets/vendor/pdfjs/wasm/quickjs-eval.wasm": "7bcacc9f22cacf7e9b23866d2a6d1639693d40c7f144e41b7c69ed37ba9cbe8f",
+    "biblioteca.html": "a9c7da121b069965e1b5b8eec8204b38f8040bf0b58155151f2941572500ac92",
     "catalogo.json": "c8bd0e0f454201c060b62594794dd9ecd5d605a503e648dc476413eb7a0a58b1",
     "consulta.css": "9d518d1a890874ebe5082d2420575a8d480f1012511fb752d9976fa28b1132c3",
     "dados.js": "c6d998586351684bcb9c33b142771a23872edec84e56de9522623b231d20d8d8",
     "fonts.css": "97749bdcd3d300fb712dc581a7a2b10ad47a5ac69e0f41e0d3d45a1d9070d078",
-    "index.html": "3e05afac75f19650a3499e9d92c6d650b9abc959e32d62f95bdc01cb17ee0bb8",
-    "portal.js": "abbc49002b572fc7b07886d326308a55e4b004ae67d986422eed0242e4074350"
+    "index.html": "6d97a5fc86ce0f11e056f26223151d79c48606eb557e717a4a69b6bc46701eee",
+    "portal.js": "4be9a9e2eb5a92baf3907ed7f3e0c5760f74f0c78bf855259496edefca51c9cc"
   },
   "documents_updated": "2026-11-03",
   "document_sources": {

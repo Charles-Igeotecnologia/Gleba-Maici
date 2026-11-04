@@ -60,3 +60,9 @@ A versão de outubro foi retirada do projeto ativo por determinação do respons
 ## Auditoria integral de links em 04/11/2026
 
 A enumeração remota recursiva detectou estudos preparatórios que ainda continham texto e páginas do relatório de outubro. A pasta ANALISE_EXATIDAO_CARTOGRAFICA (89 arquivos, 32.906.131 bytes) foi movida para o arquivo histórico externo à V2 e retirada do catálogo. O acervo ativo contém 464 arquivos. A retirada inclui o conjunto comparativo completo para preservar sua coerência fora da entrega vigente.
+
+## Página de apresentação
+
+A entrada `site/index.html` apresenta a finalidade, as cinco etapas do acervo e um seletor didático de arquivos por objetivo. A interface segue as cores Parchment, Ink e Deep Teal e as fontes locais da biblioteca. A prévia exibida é o PNG real do recorte R02 de agosto, copiado sem alteração da pasta V2; a figura não representa nova análise espacial.
+
+A busca e os downloads permanecem em `site/biblioteca.html`. Links antigos da raiz com filtros (`q`, `grupo`, `formato`, `ordem`) ou âncoras operacionais são encaminhados à biblioteca com seus parâmetros preservados. A biblioteca oferece retorno à apresentação. Sem JavaScript, os links da apresentação e as três orientações continuam disponíveis.

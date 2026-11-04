@@ -28,6 +28,7 @@ jobs:
       - name: Verificar JavaScript
         run: |
           node --check site/portal.js
+          node --check site/apresentacao.js
           node --input-type=module --check < site/assets/relatorio-viewer.js
       - name: Configurar GitHub Pages
         uses: actions/configure-pages@v5
